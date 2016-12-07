@@ -18,7 +18,7 @@
 
 	<div class="entry-content">
 
-		<?php parallax_init(); ?>
+		<?php parallax_init(get_field("parallax")); ?>
 		<?php the_content(); ?>
 
 		<?php
