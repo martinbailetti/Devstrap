@@ -10,6 +10,7 @@
  */
 require get_template_directory() . '/inc/setup.php';
 
+///flush_rewrite_rules( false );
 /**
  * Register widget area.
  *

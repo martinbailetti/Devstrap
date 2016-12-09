@@ -1,6 +1,6 @@
 <?php
 /**
- * Partial template for content in page.php
+ * Single post partial template.
  *
  * @package devstrap
  */
@@ -12,13 +12,19 @@
 
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
+		<div class="entry-meta">
+
+			<?php devstrapp_posted_on(); ?>
+
+		</div><!-- .entry-meta -->
+
 	</header><!-- .entry-header -->
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<div class="entry-content parallax_page">
+	<div class="entry-content">
 
-		<?php parallax_init(get_field("parallax")); ?>
+		<?php parallax_init(get_the_ID()); ?>
 		<?php the_content(); ?>
 
 		<?php
@@ -32,7 +38,7 @@
 
 	<footer class="entry-footer">
 
-		<?php edit_post_link( __( 'Edit', 'devstrap' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php devstrapp_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 
