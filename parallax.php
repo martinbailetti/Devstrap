@@ -12,7 +12,7 @@
 
 get_header();
 
-$container   = get_theme_mod( 'devstrapp_container_type' );
+
 $sidebar_pos = get_theme_mod( 'devstrapp_sidebar_position' );
 // On WooCommerce pages there is no need for sidebars as they leave
 // too little space for WooCommerce itself. We check if WooCommerce
@@ -34,9 +34,9 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 ?>
 
-<div class="wrapper" id="page-wrapper">
+<div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_html( $container ); ?>" id="content" tabindex="-1">
+	<div  tabindex="-1">
 
 		<div class="row">
 
@@ -47,7 +47,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop-templates/content', 'page' ); ?>
+					<?php get_template_part( 'loop-templates/content', 'parallax' ); ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.

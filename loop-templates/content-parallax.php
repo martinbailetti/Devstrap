@@ -4,8 +4,10 @@
  *
  * @package devstrap
  */
-
+$container   = get_theme_mod( 'devstrapp_container_type' );
 ?>
+
+<div class="<?php echo esc_html( $container ); ?>" id="content">
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
@@ -16,9 +18,8 @@
 
 	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
-	<div class="entry-content parallax_page">
+	<div class="entry-content">
 
-		<?php parallax_init(get_field("parallax")); ?>
 		<?php the_content(); ?>
 
 		<?php
@@ -37,3 +38,5 @@
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
+</div>
+		<?php parallax_init(get_field("parallax")); ?>

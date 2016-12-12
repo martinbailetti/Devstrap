@@ -13,7 +13,7 @@ $container = get_theme_mod( 'devstrapp_container_type' );
 
 <div class="wrapper" id="full-width-page-wrapper">
 
-	<div class="<?php echo esc_html( $container ); ?>" id="content">
+	<div>
 
 		<div class="row">
 

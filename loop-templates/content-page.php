@@ -18,7 +18,6 @@
 
 	<div class="entry-content">
 
-		<?php slider_init($post->ID); ?>
 		<?php the_content(); ?>
 
 		<?php
