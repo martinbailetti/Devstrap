@@ -34,12 +34,14 @@ $container = get_theme_mod( 'devstrapp_container_type' );
     <div class="video-container">
     <div class="video-overlay">
       <div class="container header">
-           <nav class="navbar  site-navigation" itemscope="itemscope"
+           <nav class="navbar navbar-dark bg-inverse site-navigation" itemscope="itemscope"
 		     itemtype="http://schema.org/SiteNavigationElement">
+		     	<div class="navbar-header">
 		     					<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
 					<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
 					        data-target=".exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false"
 					        aria-label="Toggle navigation"></button>
+      </div>
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
