@@ -1,47 +1,33 @@
-<?php
-/**
- * The template for displaying all single posts.
- *
- * @package devstrap
- */
 
-get_header();
-$container = get_theme_mod( 'devstrapp_container_type' );
-?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title"
+	      content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php wp_head(); ?>
+    <link href="<?php echo get_template_directory_uri() ?>/parallax/parallax.css" rel="stylesheet">
+	<script type='text/javascript' src='<?php echo get_template_directory_uri() ?>/parallax/js/jquery.scrollTo-1.4.2-min.js?ver=4.6.1'></script>
+	<script type='text/javascript' src='<?php echo get_template_directory_uri() ?>/parallax/js/jquery.localscroll-1.2.7-min.js?ver=4.6.1'></script>
+	<script type='text/javascript' src='<?php echo get_template_directory_uri() ?>/parallax/js/jquery.parallax-1.1.3.js?ver=4.6.1'></script>
+</head>
 
-<div class="wrapper" id="full-width-page-wrapper">
+<body <?php body_class(); ?>>
 
-	<div>
-
-		<div class="row">
-
-			<div class="col-md-12 content-area" id="primary">
-
-				<main class="site-main" id="main" role="main">
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'loop-templates/content', 'single-parallax' ); ?>
-
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-
-							comments_template();
-
-						endif;
-						?>
+						<?php parallax_init(get_field("parallax")); ?>
 
 					<?php endwhile; // end of the loop. ?>
 
-				</main><!-- #main -->
+				
 
-			</div><!-- #primary -->
-
-		</div><!-- .row end -->
-
-	</div><!-- Container end -->
-
-</div><!-- Wrapper end -->
-
-<?php get_footer(); ?>
+</body>
+</html>
