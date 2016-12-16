@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Videos</title>
+    <link href="videos.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="video-container">
+    <div class="video-overlay">
+      <div class="container header">
+           <div id="navegador">
+             <ul>
+              <li><a class="pause-video" href="#">Pause</a></li><li><a class="play-video" href="#">Play</a></li><li><a class="stop-video" href="#">Stop</a></li>
+            </ul> 
+        </div>
+      </div>
+      <div class="container container-content">
+      <div class="content">
+
+<p>Lorem ipsum dolor sit amet, coñsectetur adipísciñg élit. Iñteger ac mi ligula. Proiñ ipsum lectus, commodo at ñibh iñ, aliquet pelleñtesque lacus. Curabitur coñvallís aliquam maurís ullamcorper tiñciduñt. Phasellus quís malesuada tellus. Quísque dapibus, leo ac porta maximus, magña éx rutrum ñísi, iñ sagittís lorem magña a ipsum. Vestibulum id dui at mi molestie vulputate sed iñ éñim. Proiñ sit amet augue vel metus éfficitur coñsequat. Praeseñt ét coñgue libero. ñulla facilísi. Maurís id mi vitae arcu rhoñcus facilísís. Phasellus posuere placerat rutrum. Duís vitae veñeñatís orci. Doñec ligula tellus, tempor ñoñ rutrum ut, accumsañ sit amet dolor. Ut ut tellus urña. ñuñc ullamcorper lectus magña, a trístique lorem faucibus éu.</p>
+
+<p>Sed at friñgilla éros. Ut volutpat id libero vitae sagittís. Sed tortor ligula, coñgue ut lorem iñ, laoreet orñare dui. ñullam luctus, ést quís mollís sodales, ést velit fiñibus ñísi, at tempus rísus éros sit amet ést. ñulla suscipit pelleñtesque placerat. étiam augue ñibh, sagittís iñ lorem ñoñ, veñeñatís pulviñar metus. Aliquam égestas odio quís tellus placerat, vitae gravida ñeque feugiat. Pelleñtesque ut ñeque sit amet ést ultricies éuísmod ét sed augue. Suspeñdísse scelerísque metus quís turpís trístique, id aliquam dolor faucibus. Vivamus at lectus quís ñísi pelleñtesque tiñciduñt a éu augue. Sed malesuada velit éu accumsañ éfficitur. Aliquam bibeñdum ipsum ut massa sollicitudiñ, id pretium maurís posuere. Fusce viverra coñdimeñtum velit ñec placerat.</p>
+  
+    </div>
+
+
+    </div>
+  </div>
+    <!--
+ preload="auto|metadata|none"
+    -->
+      <video id="video_player" preload="auto" poster="poster.jpg" loop="true" autoplay  data-setup="{}">
+        <!--<source src="videos/caterpillar.mp4" type="video/mp4">-->
+    <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+      </video>
+<script>
+
+
+
+  $(document).ready(function(){
+/*
+      $('.video-container').click(function(){
+
+            var video = $('#video_player').get(0);
+
+
+            if(video.paused){
+
+                video.play();
+
+            }else{
+
+                video.pause();
+
+            }
+        });
+*/
+        var vid = document.getElementById("video_player");
+
+        vid.oncanplay = function() {
+            console.info("Can start playing video");
+        };
+
+        vid.oncanplaythrough = function() {
+            console.info("Can start playing all video");
+        };
+
+      $(".play-video").click(function(e){
+
+          e.preventDefault();
+
+
+            var video = $('#video_player').get(0);
+
+
+            if(video.paused){
+
+                video.play();
+
+            }else{
+
+                video.pause();
+
+            }
+      });
+
+      $(".stop-video").click(function(e){
+
+          e.preventDefault();
+
+
+            var video = $('#video_player').get(0);
+
+
+            if(!video.paused){
+
+                video.pause();
+
+                video.currentTime = 0;
+            }
+      });
+
+});
+
+
+
+</script>
+
+</body>
+
+</html>
