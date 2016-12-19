@@ -50,12 +50,14 @@ video, .ie8-poster {
 }
 
 /*Cabecera*/
-.container.header{
+.header{
 
-  
 
 }
+nav ul{
+z-index:9999;
 
+}
 
 /*MENU*/
 
@@ -121,7 +123,18 @@ video, .ie8-poster {
 
 .navbar {
     padding: 0 0;
+    z-index:999;
 }
 .navbar-toggler {
-    z-index:100;
+    float: right;
+}
+
+
+
+@media (max-width: 575px) {
+
+  .navbar #main-menu, .navbar-nav .nav-item {
+    float: left;
+  }
+
 }

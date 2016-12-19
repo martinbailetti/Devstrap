@@ -1,61 +1,35 @@
 <?php
 /**
- * Template Name: Full Video Page
-/**
- * The header for our theme.
+ * Template Name: Video Page 2
  *
- * Displays all of the <head> section and everything up till <div id="content">
+ * Template for displaying a page without sidebar even if a sidebar widget is published.
  *
  * @package devstrap
  */
 
+get_header();
 $container = get_theme_mod( 'devstrapp_container_type' );
 ?>
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-title"
-	      content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<?php wp_head(); ?>
-    <link href="<?php echo get_template_directory_uri() ?>/videosx/videos.css" rel="stylesheet">
-</head>
 
-<body <?php body_class(); ?>>
+<link href="<?php echo get_template_directory_uri() ?>/videosx/videos.css" rel="stylesheet">
+<div class="wrapper" id="full-width-page-wrapper">
 
-		
+	<div class="<?php echo esc_html( $container ); ?>" id="content">
+
+		<div class="row">
+
+			<div class="col-md-12 content-area" id="primary">
+
+				<main class="site-main" id="main" role="main">
+
+					<?php while ( have_posts() ) : the_post(); ?>
+
+<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+
 
     <div class="video-container">
     <div class="video-overlay">
-           <nav class="navbar navbar-dark bg-inverse site-navigation" itemscope="itemscope"
-		     itemtype="http://schema.org/SiteNavigationElement">	
-		     <div class="container" id="content">
-		     	<div class="navbar-header">
-		     					<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-		     				
-					<button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
-					        data-target=".exCollapsingNavbar" aria-controls="exCollapsingNavbar" aria-expanded="false"
-					        aria-label="Toggle navigation"></button>
-     </div>
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-toggleable-xs exCollapsingNavbar',
-						'container_id'    => 'exCollapsingNavbar',
-						'menu_class'      => 'nav navbar-nav',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'walker'          => new WP_Bootstrap_Navwalker(),
-					)
-				); ?>
-				</div>
-				</nav>
+  
   
       <div class="container container-content">
       <div class="content">
@@ -77,5 +51,28 @@ $container = get_theme_mod( 'devstrapp_container_type' );
     <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
       </video>
       </div>
-</body>
-</html>
+
+</article><!-- #post-## -->
+
+						<?php
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+
+							comments_template();
+
+						endif;
+						?>
+
+					<?php endwhile; // end of the loop. ?>
+
+				</main><!-- #main -->
+
+			</div><!-- #primary -->
+
+		</div><!-- .row end -->
+
+	</div><!-- Container end -->
+
+</div><!-- Wrapper end -->
+
+<?php get_footer(); ?>
