@@ -32,7 +32,7 @@ $container = get_theme_mod( 'devstrapp_container_type' );
 						<!--
 						preload="auto|metadata|none"
 						-->
-						<video id="video_player" preload="auto" poster="poster.jpg" loop="true" autoplay  data-setup="{}">
+						<video id="video_player" preload="auto" poster="<?php echo get_template_directory_uri() ?>/videosx/img/poster.jpg" loop="true" autoplay  data-setup="{}">
 							<!--<source src="videos/caterpillar.mp4" type="video/mp4">-->
 							<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
 						</video>

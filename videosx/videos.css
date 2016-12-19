@@ -2,6 +2,7 @@ html, body{
   height: 100%    !important;
   min-height: 100%;
   margin: 0px 0px  !important;
+  position:relative;
 }
 
 video {
@@ -133,10 +134,16 @@ nav ul{
   }
 }
 
+#wrapper-navbar{
+    z-index:999;
+    position:fixed;
+    top:0px;
+    width:100%;
+  }
 
 #wrapper-footer{
     z-index:999;
-    position:absolute;
+    position:fixed;
     bottom:0px;
     width:100%;
     padding:15px 0;
