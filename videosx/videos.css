@@ -116,13 +116,21 @@ nav ul{
     width: 100%;
   }
 
+  .navbar-dark .navbar-nav .nav-link:hover {
+      
+    background-color: #000;
+    color: rgba(255,255,255,1);
+  }
   .navbar .container{
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
     padding-right: 0;
   }
-
+  .nav-link {
+      margin-right: 0;
+      margin-left: 0;
+  }
 }
 
 
@@ -134,3 +142,9 @@ nav ul{
     padding:15px 0;
   background-color: rgba(0,0,0,.7);
   }
+
+footer .site-info, footer .site-info a{
+
+  color:#fff;
+
+}
