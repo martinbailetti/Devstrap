@@ -31,6 +31,7 @@ video {
 video, .ie8-poster {
   position: fixed;
   left: 0; 
+  top: 37px;
   bottom: 0;
   min-width: 100%; 
   min-height: 100%;
@@ -49,8 +50,7 @@ video, .ie8-poster {
 
 }
 nav ul{
-z-index:9999;
-
+  z-index:9999;
 }
 
 
@@ -124,3 +124,13 @@ z-index:9999;
   }
 
 }
+
+
+#wrapper-footer{
+    z-index:999;
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    padding:15px 0;
+  background-color: rgba(0,0,0,.7);
+  }
