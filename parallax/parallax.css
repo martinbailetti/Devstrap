@@ -23,7 +23,7 @@ html{
 .parallax_content{
 	margin: 0 auto;
 	min-width: 100%;
-	overflow: auto;
+	overflow-x: hidden;
 	width: 100%;
 }
 
